@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>birth day</title>
+  <script>
+    function birthDay() {
+      let birthYear = document.getElementById('year').value;
+      let month = document.getElementById('month').value;
+      let date = document.getElementById('day').value;
+      if (isNaN(birthYear) || isNaN(month) || isNaN(date)) {
+
+        try {
+          alert("Enter the correct year, month and date please.");
+        }
+        catch (err) {
+          alert(err.message);
+        }
+        return;
+      }
+      document.getElementById('birthDayOutput').innerHTML = `${birthYear} ${month} ${date}`
+    }
+  </script>
+</head>
+<body>
+  <h2>Please Enter Your Birth Date </h2>
+  Birth Year<input type='text' id='year' />
+  Month<input type='text' id='month' />
+  Day<input type='text' id='day' />
+  <input type='button' value='Birth Day' onclick='birthDay()'>
+  <div id='birthDayOutput'></div>
+</body>
+</html>
